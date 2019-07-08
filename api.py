@@ -3,18 +3,20 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
 
-CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER_PATH', '/usr/local/bin/chromedriver')
-GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', '/usr/bin/google-chrome')
+GOOGLE_CHROME_BIN = os.environ['GOOGLE_CHROME_BIN']
+CHROME_DRIVER = os.environ['CHROME_DRIVER']
 
-options = Options()
-options.binary_location = GOOGLE_CHROME_BIN
-options.add_argument('--disable-gpu')
-options.add_argument('--no-sandbox')
-options.headless = True
+def _get_options():
+    options = Options()
+    options.add_argument("--headless")
+    # options.binary_location = GOOGLE_CHROME_BIN
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    return options
 
 
 
-driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+driver = webdriver.Chrome(executable_path=CHROME_DRIVER,options=_get_options())
 driver.get("https://kinposter3.000webhostapp.com/login")
 time.sleep(2)
 
