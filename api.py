@@ -1,10 +1,9 @@
+# coding=utf-8
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
-import sys
-
-sys.setdefaultencoding('iso-8859-1') 
+ 
 
 GOOGLE_CHROME_BIN = os.environ['GOOGLE_CHROME_BIN']
 CHROME_DRIVER = os.environ['CHROME_DRIVER']
