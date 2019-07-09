@@ -48,3 +48,5 @@ time.sleep(2)
 
 element = driver.find_element_by_name('post')
 driver.execute_script("arguments[0].click();", element)
+
+time.sleep(300)
