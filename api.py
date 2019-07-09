@@ -23,10 +23,10 @@ driver.get("https://kinposter3.000webhostapp.com/login")
 time.sleep(2)
 
 usuario = driver.find_element_by_xpath('//*[@id="username"]')
-usuario.send_keys("guille16")
-
-contraseña = driver.find_element_by_xpath('//*[@id="password"]')
-contraseña.send_keys("emanuel19")
+usuario.send_keys('guille16')
+time.sleep(2)
+contrasena = driver.find_element_by_xpath('//*[@id="password"]')
+contrasena.send_keys('emanuel19')
 
 driver.find_element_by_xpath('//*[@id="signinBtn"]').click()
 
